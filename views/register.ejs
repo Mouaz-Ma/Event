@@ -40,9 +40,8 @@
 }
    
 </style>
-    <div class="container text-center d-flex justify-content-center mt-5">
+    <div class="container d-flex justify-content-center mt-5">
                 <div class="col-md-5 ">
-                  <h1>register form in here</h1>
                   <% if(error && error.length) {%> 
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         <%= error %>
@@ -60,7 +59,8 @@
                     </div>
                     <% } %> 
                   <div class="login-form mt-4 p-4">
-                    <form class="form mt-5" action='/register' method="POST" >
+                    <h3>register form in here</h3>
+                    <form class="form mt-2" action='/register' method="POST" >
                       <div class="form-group">
                         <label class="mb-2" for="email">Email address</label>
                         <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="example@example.com">
