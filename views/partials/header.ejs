@@ -1,131 +1,60 @@
-<!doctype html>
+
+<!DOCTYPE html>
+
 <html lang="en">
 
+
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-  <meta name="generator" content="Hugo 0.84.0">
- 
-  <meta property="og:image" content="/images/Asset 1.png">
 
-  <link rel="canonical" href="https://getbootstrap.comhttps://getbootstrap.com/docs/5.0/examples/product/">
+    <meta charset="UTF-8">
 
-  <!-- phone styling plug in -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <title>Event Camp Premium | Responsive HTML5 template</title>
 
-  <!-- font awsome -->
-  <script src="https://kit.fontawesome.com/5022cc2b4f.js" crossorigin="anonymous"></script>
+    <!-- Favicon -->
 
-  <!-- Bootstrap core CSS -->
-  <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-  <link rel="manifest" href="/images/site.webmanifest">
-  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="theme-color" content="#E0E2E3">
+    <!-- Font Awesome -->
 
-<link href="/stylesheets/partials.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-</heead>
+    <!-- Fonts -->
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
+
+    <!-- Owl Carousel -->
+
+    <link href="stylesheets/owl.carousel.min.css" rel="stylesheet">
+
+    <link href="stylesheets/owl.theme.default.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+
+    <link href="stylesheets/style.css" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="stylesheets/style-mobile.css"> 
+
+    <!-- Modernizr -->
+
+    <script src="js/modernizr.js"></script> 
+
+
+
+
+
+</head>
+
+
+
 <body>
-      <!-- Main Header -->
-
-      <header id="top-header">
-
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-lg-3 col-md-12 col-sm-12">
-
-                    <div class="cd-logo">
-
-                        <a href="#0"><img src="images/Mairfet Edu - Logo - With Slogan (3.png" alt="Logo" width="175" height="75"></a>
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-9 col-md-6 col-sm-6">
-
-                   <div id="cd-nav">
-
-                        <a href="#0" class="cd-nav-trigger">Menu<span></span></a>
-
-                        <nav id="cd-main-nav">
-
-                            <ul >
-
-                              <li><a href="#our-speakers-sec">Speakers</a></li>
-
-                                <li><a href="#event-schedule-sec">Schedule</a></li>
-
-                                <li><a href="#event-packages-sec">Prices</a></li>
-
-                                <li><a href="#sponsors-sec">Sponsors</a></li>
-
-                                <li><a href="#previous-event-sec">Gallery</a></li>
-
-                                <li><a href="#contact-sec">Contacts</a></li>
-
-                            </ul>
-
-                        </nav>
-
-                   </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </header>
-
-    <!-- /End Main Header -->
-
-    <!-- <header class="site-header py-1">
-        <nav class="container-fluid d-flex flex-column flex-md-row navbar navbar-expand-lg navbar-dark">
-          <div class="col-md-5 text-center">
-            <a class="py-2" href="http://amman.marifetedu.com/tex" aria-label="Product">
-              <img src="/images/Mairfet Edu - Logo - With Slogan (3.png" alt="" width="175" height="75">
-            </a>
-          </div>
-          <div class="col-md-5 text-center mt-1">
-            <div class="mt-1">
-              <a href="https://www.facebook.com/marifetedu/" class="btn facebook"><i class="fab fa-facebook"></i></a>
-              <a href="https://www.youtube.com/channel/UCI6lLBCjZqjOQI_UG4_ZQSA" class="btn youtube"><i
-                  class="fab fa-youtube"></i></a>
-              <a href="https://www.instagram.com/marifetedu/?hl=en" class="btn Instagram"><i
-                  class="fab fa-instagram"></i></a>
-              <a href="https://wa.me/905050710592" class="btn whatsApp"><i class="fab fa-whatsapp"></i></a>
-            </div>
-  
-          </div>
-          <% if(!currentUser) {%>
-            <div class="col-md-2 text-center mt-1">
-              <div class="mt-1">
-                <a class="ml-5 p-2" href="/login"><button class="btn btn-secondary"> Login </button></a>
-                <a class="ml-5 p-2" href="/register"><button class="btn btn-secondary"> Register </button></a>
-              </div>
-            </div>
-            <% } else { %>
-                <div class="col-md-2 text-center mt-1">
-                    <div class="mt-1">
-                      <a class="ml-5 p-2" href="/logout"><button class="btn btn-secondary"> logout </button></a>
-                    </div>
-                  </div>
-                  <% } %>
-        </nav>
-      
-
-        </header> -->

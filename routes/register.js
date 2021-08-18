@@ -43,12 +43,12 @@ router.post('/register', async(req, res) => {
 
 router.get('/login', (req, res) => {
     res.render('login');
-})
+});
 
 router.post('/login', passport.authenticate('local', {failureFlash: true, failureRedirect: '/login'}), (req, res) => {
-    req.flash('success', 'welcome!');
-    res.redirect('/');
-})
+        req.flash('success', 'welcome!');
+        res.render('adminInfo');
+});
 
 // LOGOUT ROUTE
 router.get('/logout', function(req, res) {

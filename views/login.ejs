@@ -1,92 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-      <!-- font awsome -->
-  <script src="https://kit.fontawesome.com/5022cc2b4f.js" crossorigin="anonymous"></script>
-
-    <!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-  <link rel="manifest" href="/images/site.webmanifest">
-  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="theme-color" content="#E0E2E3">
-    <title>log in</title>
-
+<%- include partials/header.ejs %>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
     <style>
-        .bd-placeholder-img {
-          font-size: 1.125rem;
-          text-anchor: middle;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          user-select: none;
-        }
+      body{
+        background-image: url("/images/patrick-tomasso-5hvn-2WW6rY-unsplash.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+      }
     
-        @media (min-width: 768px) {
-          .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-          }
-        }
-
-        body{
-          color: aliceblue;
-        }
-      </style>
-              <!-- Custom styles for this template -->
-  <link href="/stylesheets/visitorStyle.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <div class="row mx-auto mt-5">
-            <div class="col-2"></div>
-            <div class="col-8">
-              <% if(error && error.length) {%> 
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <%= error %>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                </div>
-                <% } %> 
-                <% if(success && success.length) {%> 
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <%= success %>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                </div>
-                <% } %> 
-                <h1>Login form</h1>
-                <form class="form" action='/login' method="POST" >
-                    <div class="form-group">
-                        <label for="userName">User Name</label>
-                        <input type="text" class="form-control" id="username" name="username" aria-describedby="nameHelp" placeholder="E.X mona lisa" required>
+      .login-form{
+        color: seashell;
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid gray;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      }
+       
+      .login100-form-btn {
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 60px;
+    background-color: #333;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #fff;
+    transition: all .4s;
+    position: relative;
+      }
+    </style>
+    <div class="container mt-5">
+      <div class="row">
+        <!-- flash messages -->
+        <% if(error && error.length) {%> 
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <%= error %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+          </div>
+          <% } %> 
+          <% if(success && success.length) {%> 
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <%= success %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+          </div>
+          <% } %> 
+          <!-- End of flash messages -->
+          <div class="col-md-4 offset-md-4">
+              <div class="login-form mt-4 p-4">
+                  <form action="/login" method="POST" class="row g-3">
+                      <h4>Welcome Back</h4>
+                      <div class="col-12">
+                          <label>Username</label>
+                          <input type="text" class="form-control" id="username" name="username" aria-describedby="nameHelp" placeholder="E.X mona lisa" required>
+                        </div>
+                      <div class="col-12">
+                          <label>Password</label>
+                          <input type="password" class="form-control" id="password" name="password" placeholder="**************" required>
+                        </div>
+                      <div class="col-12">
+                          <button type="submit" class="login100-form-btn float-end">Login</button>
                       </div>
-                    <div class="form-group">
-                      <label for="password">Password</label>
-                      <input type="password" class="form-control" id="password" name="password" placeholder="**************" required>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary mt-3">log in!</button>
                   </form>
-            </div>
-            <div class="col-2"></div>
-        </div>
-   
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+                  <hr class="mt-4">
+                  <div class="col-12">
+                      <p class="text-center mb-0">Have not account yet? <a href="/register">Signup</a></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+      <!-- Bootstrap JS -->
+      <script src="https://www.markuptag.com/bootstrap/5/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
