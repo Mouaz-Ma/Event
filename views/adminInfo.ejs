@@ -1,0 +1,101 @@
+<div id="firstRow">
+  <%- include partials/header.ejs %>
+
+  <title>معرض TEX - مجموعة معرفة للاستشارات والقبولات الجامعية</title>
+
+  <!-- Custom styles for this template -->
+  <link href="/stylesheets/visitorStyle.css" rel="stylesheet">
+</head>
+
+  <div class="row text-center">
+    <div class="col-md-6 mx-auto">
+      <h2 class="white">QR Code</h2>
+      <img src="<%= src %>">
+    </div>
+    <div class="col-md-6">
+      <div class="mx-auto">
+
+        <div class="m-2">
+          <br>
+          <h3 class="white text-center">Edit info here</h3>
+          <form action="/user/<%=foundVisitor._id%>" method="POST">
+            <div class="row">
+              <div class="row text-center">
+                <div class="col-md-6">
+                  <!-- Name -->
+                  <label for="Name">الاسم</label>
+                  <input id="Name" name="Name" type="text" class="form-control" value="<%= foundVisitor.Name %>"
+                    required>
+
+                  <!-- degree  -->
+                  <div class="form-group">
+                    <label for="degree">Degree</label>
+                    <input class="form-control" type="text" name="degree" placeholder="Enter Desired Degree">
+                  </div>
+
+                </div>
+                <div class="col-md-6" id="marginRight">
+                  <!-- email -->
+                  <label for="email">البريد الإلكتروني</label>
+                  <input name="email" id="email" type="email" class="form-control" value="<%= foundVisitor.email %>"
+                    required>
+                  <!-- telephone number  -->
+                  <label for="phone">رقم التيليفون</label>
+                  <input class="form-control" id="phone" type="number" name="telephonNumber"
+                    value="<%= foundVisitor.telephonNumber %>" required>
+
+                  <br>
+                  <button id="generator" type="submit" class="btn btn-secondary btn-lg btn-block  mt-2"
+                    value="Get QR">حفظ
+                  </button>
+
+                </div>
+          </form>
+          <div class="mt-5">
+            <form action="/user/<%=foundVisitor._id%>/print" method="GET">
+              <button class="btn btn-secondary btn-lg btn-block" type="submit"> Print ticket</button>
+            </form>
+          </div>
+          <div class="mt-5">
+            <form action="/user/download" method="GET">
+              <button class="btn btn-secondary btn-lg btn-block mb-5" type="submit"> Download All Visitor Data</button>
+            </form>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <form>
+                <input type="text" aria-label="Search" class="form-control" onkeyup="showResultsName(this.value)" placeholder="Search by name">
+                <div>
+                  <div class="border mx-auto">
+                    <div id="search-results-names"></div>
+ 
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-6">
+              <form>
+                <input type="text" aria-label="Search" class="form-control" onkeyup="showResultsNumber(this.value)" placeholder="Search by number">
+                <div>
+                  <div class="border mx-auto">
+                    <div id="search-results-numbers"></div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row container text-center mt-5">
+    <div class="col">
+      <img src="/images/Asset 1.png" alt="" height="100px" width="250px">
+      <br>
+      <button class="btn m-5" id="browseBtn"><a href="https://www.marifetedu.com/">Mareifet Web site</a></button>
+    </div>
+  </div>
+</div>
+</div>
+  <%- include partials/footer.ejs %>
