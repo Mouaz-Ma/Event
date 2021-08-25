@@ -1,6 +1,3 @@
-require('dotenv').config({
-  path: __dirname + '/.env'
-});
 const createError = require('http-errors'),
       express = require('express'),
       path = require('path'),
@@ -36,6 +33,7 @@ const Visitor = require('./models/visitor');
 const {
   isLoggedIn
 } = require('./middleware');
+
 
 mongoose.connect(process.env.DB_URL, {
   useNewUrlParser: true,
